@@ -56,6 +56,22 @@ namespace ReadExcel
 		{
 			excelApp.Quit();
 		}
+		public void DeleteCell(string filePath, int row, int column)
+        {
+            Workbook workbook = excelApp.Workbooks.Open(filePath);
+            Worksheet worksheet = workbook.Sheets[1]; // Assuming you want to delete cell in the first sheet
+
+            // Get the specif
+			ic cell to delete
+            Range cellToDelete = worksheet.Cells[row, column];
+
+            // Delete the cell
+            cellToDelete.Delete(XlDeleteShiftDirection.xlShiftUp); // Specify xlShiftUp to shift cells up
+
+            // Save changes and close workbook
+            workbook.Save();
+            workbook.Close();
+        }
 
 	}
 }

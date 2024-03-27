@@ -38,6 +38,17 @@ namespace WindowsFormsApp1
 			string selectedValue = comboBox.SelectedItem.ToString();
 
 			label1.Text = "" + index;
+			
+			Task.Run(async () =>
+			{
+				await Task.Delay(1000);
+				if (index == 2)
+					dataGridView2.BeginInvoke(new Action(() =>
+					{
+						dataGridView2.Rows.RemoveAt(index);
+					}));
+
+			});
 			// Xử lý giá trị được chọn
 			//MessageBox.Show("Giá trị mới: " + selectedValue);
 		}

@@ -22,7 +22,10 @@ namespace ReadExcel
 			//Source
 			Workbook sourceWorkbook = excelApp.Workbooks.Open(sourcepath);
 			Worksheet sourceworksheet = (Worksheet)sourceWorkbook.Sheets[sourceSheetName];
-			Excel.Range sourceRange = sourceworksheet.Range[sourceRangeAdress];
+			
+			Excel.Range startCell = (Excel.Range)sourceworksheet.Cells[18, 1];
+			Excel.Range EndCell = (Excel.Range)sourceworksheet.Cells[19, 5];
+			Excel.Range sourceRange = sourceworksheet.Range[startCell,EndCell];
 
 			//Dest
 			Workbook desWorkbook = excelApp.Workbooks.Open(despath);
@@ -56,22 +59,6 @@ namespace ReadExcel
 		{
 			excelApp.Quit();
 		}
-		public void DeleteCell(string filePath, int row, int column)
-        {
-            Workbook workbook = excelApp.Workbooks.Open(filePath);
-            Worksheet worksheet = workbook.Sheets[1]; // Assuming you want to delete cell in the first sheet
-
-            // Get the specif
-			ic cell to delete
-            Range cellToDelete = worksheet.Cells[row, column];
-
-            // Delete the cell
-            cellToDelete.Delete(XlDeleteShiftDirection.xlShiftUp); // Specify xlShiftUp to shift cells up
-
-            // Save changes and close workbook
-            workbook.Save();
-            workbook.Close();
-        }
 
 	}
 }

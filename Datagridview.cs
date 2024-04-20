@@ -78,6 +78,7 @@ namespace WindowsFormsApp1
 			dataGridView2.Rows.RemoveAt(index);
 			//Test
 			//Test1
+			//Test2
 
 		}
 	}

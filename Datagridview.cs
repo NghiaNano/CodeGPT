@@ -76,7 +76,8 @@ namespace WindowsFormsApp1
 			}
 			values.ForEach(value => { Console.WriteLine(value); });
 			dataGridView2.Rows.RemoveAt(index);
-			//Test1			
+			//Test1
+//Test2			
 		}
 	}
 }

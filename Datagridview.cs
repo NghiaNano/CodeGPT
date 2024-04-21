@@ -88,12 +88,9 @@ namespace WindowsFormsApp1
 			//Test9
 			//Test10
 			//Test12
+			//tEST13
 			
 
-		}
-		private void Test()
-		{
-			
 		}
 	}
 }
